@@ -9,32 +9,32 @@ import {
   Vote
 } from "lucide-react";
 
-const threads = [
+const discussionThreads = [
   {
-    title: "What are the most effective AI launch loops for SaaS teams?",
+    title: "What are the most effective AI launch loops for SaaS teams right now?",
     category: "Launching",
     replies: "2.4k replies",
     trend: "+18%"
   },
   {
-    title: "Best creator monetization experiments right now",
+    title: "Best creator monetization experiments this quarter",
     category: "Revenue",
     replies: "1.7k replies",
     trend: "+12%"
   },
   {
-    title: "How are teams using graphs to improve product discovery?",
+    title: "How are product teams using signal graphs to improve discovery?",
     category: "Research",
     replies: "980 replies",
     trend: "+9%"
   }
 ];
 
-const leaders = [
+const communityLeaders = [
   "Ava — product ops",
-  "Miles — AI workflow design",
-  "Lena — creator monetization",
-  "Noah — community growth"
+  "Miles — workflow systems",
+  "Lena — creator growth",
+  "Noah — community analytics"
 ];
 
 export default function CommunityPage() {
@@ -42,13 +42,13 @@ export default function CommunityPage() {
     <main className="community-shell">
       <section className="community-hero">
         <div>
-          <span className="section-kicker">Community network</span>
-          <h1>Find your edge in the signal.</h1>
+          <span className="section-kicker">Community signal</span>
+          <h1>See the conversations shaping what ships next.</h1>
         </div>
 
         <div className="search-box">
           <Search size={16} />
-          <span>Search conversations, launches, or creators</span>
+          <span>Search launches, creators, and product signals</span>
         </div>
       </section>
 
@@ -57,13 +57,13 @@ export default function CommunityPage() {
           <div className="panel-header-row">
             <div>
               <p className="mini-label">Trending discussions</p>
-              <h2>What the network is talking about</h2>
+              <h2>What the network is paying attention to</h2>
             </div>
             <button className="primary-btn small-btn">New post</button>
           </div>
 
           <div className="thread-list">
-            {threads.map((thread) => (
+            {discussionThreads.map((thread) => (
               <article key={thread.title} className="thread-item">
                 <div className="thread-topline">
                   <span className="thread-tag">{thread.category}</span>
@@ -90,7 +90,7 @@ export default function CommunityPage() {
           </div>
 
           <ul className="leader-list">
-            {leaders.map((leader, index) => (
+            {communityLeaders.map((leader, index) => (
               <li key={leader}>
                 <span className="leader-rank">#{index + 1}</span>
                 <span>{leader}</span>
@@ -106,17 +106,17 @@ export default function CommunityPage() {
             <Flame size={18} />
             <span>Hot right now</span>
           </div>
-          <strong>Creator SaaS + AI orchestration</strong>
-          <p>Builders are stacking community discovery with no-code tools and AI-driven product feedback loops.</p>
+          <strong>Creator systems + AI orchestration.</strong>
+          <p>Builders are pairing community discovery with AI-driven product experiments and more direct monetization loops.</p>
         </div>
 
         <div className="panel-card info-card">
           <div className="info-header">
             <Users size={18} />
-            <span>What people need</span>
+            <span>What teams need</span>
           </div>
-          <strong>Better trust and actionability.</strong>
-          <p>Members consistently ask for clearer product signals, more transparent feedback loops, and faster validation.</p>
+          <strong>Better trust and actionable feedback.</strong>
+          <p>Members are asking for clearer product signals, more transparent launch reasoning, and higher-quality validation loops.</p>
         </div>
 
         <div className="panel-card info-card">
@@ -125,14 +125,14 @@ export default function CommunityPage() {
             <span>Opportunity</span>
           </div>
           <strong>From discovery to monetization.</strong>
-          <p>The biggest pathways are building and sharing systems that convert communities into product momentum.</p>
+          <p>The biggest path is turning community insight into clearer decisions, stronger product positioning, and conversion-ready systems.</p>
         </div>
       </section>
 
       <section className="cta-box cta-community">
         <div>
           <span className="section-kicker">Join the loop</span>
-          <h2>Build in public. Learn in public.</h2>
+          <h2>Build in public. Learn from signal.</h2>
         </div>
         <Link href="/dashboard" className="primary-btn large-btn">
           Open workspace <ArrowRight size={18} />

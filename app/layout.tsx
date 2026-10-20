@@ -3,8 +3,8 @@ import "./globals.css";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "LITHUB",
-  description: "Hybrid AI workspace and community platform for builders, creators, and operators."
+  title: "LITHUB — AI workspace for product teams",
+  description: "LITHUB brings workflows, product insights, and community signals together in one AI-native workspace."
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -17,7 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <div className="brand-text">LITHUB</div>
           </div>
 
-          <nav className="nav">
+          <nav className="nav" aria-label="Main navigation">
             <Link href="/">Home</Link>
             <Link href="/dashboard">Dashboard</Link>
             <Link href="/community">Community</Link>
@@ -26,7 +26,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
           <div className="nav-actions">
             <Link href="/community" className="ghost-btn small-btn">
-              Sign in
+              Log in
             </Link>
             <Link href="/dashboard" className="primary-btn small-btn">
               Start building
@@ -35,6 +35,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </header>
 
         {children}
+
+        <footer className="site-footer">
+          <div>
+            <strong>LITHUB</strong>
+            <span>AI workflow OS for product teams.</span>
+          </div>
+          <div className="footer-links">
+            <Link href="/pricing">Pricing</Link>
+            <Link href="/community">Community</Link>
+            <Link href="/dashboard">Dashboard</Link>
+          </div>
+        </footer>
       </body>
     </html>
   );
