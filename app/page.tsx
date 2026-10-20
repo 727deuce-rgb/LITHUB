@@ -11,56 +11,48 @@ import {
   MessagesSquare,
   Rocket,
   Sparkles,
+  TrendingUp,
   Users,
   Wand2
 } from "lucide-react";
 
-const stats = [
-  { label: "Builders online", value: "24.8k" },
-  { label: "AI prompts shipped", value: "1.4M" },
-  { label: "Revenue activated", value: "$4.2M" }
+const statHighlights = [
+  { label: "Product teams active", value: "24.8k" },
+  { label: "AI workflows shipped", value: "1.4M" },
+  { label: "Operating revenue tracked", value: "$4.2M" }
 ];
 
-const features = [
+const featureCards = [
   {
     icon: BrainCircuit,
-    title: "AI Workspace",
-    text: "Let agents plan, code, route, and execute tasks in one unified operating layer."
+    title: "AI workflow OS",
+    text: "Turn research, planning, and execution into a single, organized operating system for your team."
   },
   {
     icon: Database,
-    title: "Knowledge Graph",
-    text: "Turn scattered ideas, repos, and community signals into one living graph."
+    title: "Signal graph",
+    text: "Connect customer feedback, product ideas, release data, and community momentum in one clear graph."
   },
   {
     icon: Users,
-    title: "Community Engine",
-    text: "Blend Reddit-style discovery with GitHub-grade collaboration and product feedback loops."
+    title: "Creator network",
+    text: "Bring community discovery, product validation, and launch conversations into one shared layer."
   },
   {
     icon: CreditCard,
-    title: "Monetization",
-    text: "Launch products, memberships, and premium workflows with Stripe-ready infrastructure."
+    title: "Revenue engine",
+    text: "Design pricing, activate subscriptions, and align growth loops around the metrics that matter."
   }
 ];
 
-const feed = [
-  { tag: "Launch", title: "LITHUB Graph v2 is live", meta: "22 min ago • 1.2k reactions" },
-  { tag: "AI", title: "Agent workflow templates are trending", meta: "53 min ago • 842 reactions" },
-  { tag: "Marketing", title: "Creator monetization stack is exploding", meta: "1 hr ago • 2.1k reactions" },
-  { tag: "Build", title: "Open source builder communities are compounding", meta: "2 hrs ago • 516 reactions" }
+const networkFeed = [
+  { tag: "Launch", title: "Product teams are standardizing AI launch planning", meta: "22 min ago • 1.2k reactions" },
+  { tag: "Research", title: "A clearer pattern is emerging around AI onboarding loops", meta: "53 min ago • 842 reactions" },
+  { tag: "Growth", title: "Creator SaaS teams are turning community feedback into roadmap decisions", meta: "1 hr ago • 2.1k reactions" },
+  { tag: "Build", title: "Signal-driven product teams are shipping faster with less churn", meta: "2 hrs ago • 516 reactions" }
 ];
 
-const graphNodes = [
-  "Ideas",
-  "Agents",
-  "Repos",
-  "Users",
-  "Products",
-  "Revenue",
-  "Signals",
-  "Launches"
-];
+const graphNodes = ["Ideas", "Agents", "Signals", "Users", "Products", "Revenue", "Launches", "Feedback"];
 
 export default function HomePage() {
   return (
@@ -73,28 +65,28 @@ export default function HomePage() {
         <div className="hero-copy">
           <div className="eyebrow">
             <Sparkles size={14} />
-            New hybrid AI operating system
+            AI-native operating system
           </div>
 
           <h1>
-            Build products, communities, and revenue in one <span>living system</span>.
+            Turn product thinking into a <span>faster shipping engine</span>.
           </h1>
 
           <p className="subtitle">
-            LITHUB combines AI workflows, developer tooling, creator economics, and a real network effect into one platform for shipping smarter.
+            LITHUB brings product strategy, community intelligence, launch workflows, and AI execution into one system built for modern teams.
           </p>
 
           <div className="cta-row">
             <Link href="/dashboard" className="primary-btn large-btn">
-              Launch your workspace <ArrowRight size={18} />
+              Open workspace <ArrowRight size={18} />
             </Link>
             <Link href="/community" className="ghost-btn large-btn">
-              Explore the graph
+              Explore signals
             </Link>
           </div>
 
           <div className="mini-stats">
-            {stats.map((stat) => (
+            {statHighlights.map((stat) => (
               <div key={stat.label} className="mini-stat">
                 <strong>{stat.value}</strong>
                 <span>{stat.label}</span>
@@ -107,7 +99,7 @@ export default function HomePage() {
           <div className="panel-header">
             <div className="live-pill">
               <span className="dot" />
-              Live build loop
+              Live product loop
             </div>
             <button className="chip">Auto-route</button>
           </div>
@@ -116,7 +108,7 @@ export default function HomePage() {
             <div className="workspace-top">
               <div className="task">
                 <GitBranch size={16} />
-                Ship new LITHUB launch
+                Launch readiness sync
               </div>
               <div className="status good">Healthy</div>
             </div>
@@ -124,21 +116,21 @@ export default function HomePage() {
             <div className="agent-strip">
               <div className="agent-item">
                 <Wand2 size={14} />
-                AI Strategist
+                Strategy AI
               </div>
               <div className="agent-item">
                 <MessagesSquare size={14} />
-                Community Scout
+                Community AI
               </div>
               <div className="agent-item">
                 <Rocket size={14} />
-                Growth Ops
+                Growth AI
               </div>
             </div>
 
             <div className="graph-box">
-              {graphNodes.map((node, idx) => {
-                const layout = [
+              {graphNodes.map((node, index) => {
+                const positions = [
                   { x: -120, y: -60 },
                   { x: 110, y: -50 },
                   { x: -150, y: 70 },
@@ -153,7 +145,7 @@ export default function HomePage() {
                   <span
                     key={node}
                     className="node"
-                    style={{ left: "50%", top: "50%", transform: `translate(-50%, -50%) translate(${layout[idx].x}px, ${layout[idx].y}px)` }}
+                    style={{ transform: `translate(-50%, -50%) translate(${positions[index].x}px, ${positions[index].y}px)` }}
                   >
                     {node}
                   </span>
@@ -162,7 +154,7 @@ export default function HomePage() {
             </div>
 
             <div className="progress-row">
-              <div className="metric-label">Launch readiness</div>
+              <div className="metric-label">Launch confidence</div>
               <div className="metric-score">92%</div>
             </div>
             <div className="progress">
@@ -174,12 +166,12 @@ export default function HomePage() {
 
       <section id="features" className="section">
         <div className="section-header">
-          <span className="section-kicker">Built for builders</span>
-          <h2>Everything your next great product needs.</h2>
+          <span className="section-kicker">Built for the next wave of teams</span>
+          <h2>Every critical product layer, unified.</h2>
         </div>
 
         <div className="feature-grid">
-          {features.map((feature) => {
+          {featureCards.map((feature) => {
             const Icon = feature.icon;
             return (
               <article key={feature.title} className="feature-card">
@@ -200,23 +192,23 @@ export default function HomePage() {
       <section id="network" className="network-section">
         <div className="network-copy">
           <span className="section-kicker">Live network</span>
-          <h2>Discover what the world is building right now.</h2>
+          <h2>See what the market is validating before you ship.</h2>
           <p>
-            Keep your pulse on launches, experiments, demand, and product signals from the communities that matter most.
+            LITHUB turns community discussions, launch conversations, and customer feedback into product signals that help your team move with clarity.
           </p>
           <ul>
-            <li><BriefcaseBusiness size={16} /> Product signals and launch tracking</li>
-            <li><BarChart3 size={16} /> Community insight and trend detection</li>
-            <li><Rocket size={16} /> Faster feedback loops for startup teams</li>
+            <li><BriefcaseBusiness size={16} /> Product signals and roadmap clarity</li>
+            <li><BarChart3 size={16} /> Signal monitoring across product and community</li>
+            <li><TrendingUp size={16} /> Faster iteration cycles and stronger launch outcomes</li>
           </ul>
         </div>
 
         <div className="feed-panel">
-          {feed.map((item) => (
-            <div key={item.title} className="feed-item">
-              <span className="tag">{item.tag}</span>
-              <h4>{item.title}</h4>
-              <small>{item.meta}</small>
+          {networkFeed.map((entry) => (
+            <div key={entry.title} className="feed-item">
+              <span className="tag">{entry.tag}</span>
+              <h4>{entry.title}</h4>
+              <small>{entry.meta}</small>
             </div>
           ))}
         </div>
@@ -224,8 +216,8 @@ export default function HomePage() {
 
       <section id="pricing" className="pricing-section">
         <div className="section-header center">
-          <span className="section-kicker">Pricing</span>
-          <h2>Simple plans for solo builders and teams.</h2>
+          <span className="section-kicker">Simple pricing</span>
+          <h2>Choose the setup that matches your operating stage.</h2>
         </div>
 
         <div className="price-grid">
@@ -234,7 +226,7 @@ export default function HomePage() {
             <div className="price">$19<span>/mo</span></div>
             <ul>
               <li>AI workspace</li>
-              <li>1 project graph</li>
+              <li>One signal graph</li>
               <li>Community access</li>
             </ul>
             <Link href="/pricing" className="ghost-btn full-width-btn">
@@ -244,12 +236,12 @@ export default function HomePage() {
 
           <div className="price-card featured">
             <div className="badge">Most popular</div>
-            <h3>Scale</h3>
+            <h3>Growth</h3>
             <div className="price">$79<span>/mo</span></div>
             <ul>
-              <li>Unlimited AI agents</li>
-              <li>Multi-project graph</li>
-              <li>Stripe billing tools</li>
+              <li>Unlimited AI workflows</li>
+              <li>Connected product loops</li>
+              <li>Stripe-ready billing</li>
             </ul>
             <Link href="/pricing" className="primary-btn full-width-btn">
               Start scaling
@@ -261,7 +253,7 @@ export default function HomePage() {
             <div className="price">Custom</div>
             <ul>
               <li>Private deployment</li>
-              <li>Team permissions</li>
+              <li>Role-based security</li>
               <li>Advanced integrations</li>
             </ul>
             <Link href="/pricing" className="ghost-btn full-width-btn">
@@ -275,7 +267,7 @@ export default function HomePage() {
         <div className="cta-box">
           <div>
             <span className="section-kicker">Ready to launch</span>
-            <h2>Turn your idea into a product loop.</h2>
+            <h2>Build the next operating layer for your product org.</h2>
           </div>
           <Link href="/dashboard" className="primary-btn large-btn">
             Build on LITHUB

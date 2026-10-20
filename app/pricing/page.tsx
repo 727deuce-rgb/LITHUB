@@ -5,22 +5,22 @@ const plans = [
   {
     name: "Starter",
     price: "$19",
-    description: "For solo creators and confident explorers.",
-    perks: ["AI workspace", "One knowledge graph", "Community access"],
+    description: "For solo builders and early operators.",
+    perks: ["AI workspace", "Signal graph", "Community access"],
     featured: false
   },
   {
-    name: "Scale",
+    name: "Growth",
     price: "$79",
-    description: "For teams shipping and learning fast.",
-    perks: ["Unlimited AI agents", "Multi-project workflows", "Stripe billing tools"],
+    description: "For product teams turning signal into execution.",
+    perks: ["Unlimited AI workflows", "Connected product loops", "Stripe-ready billing"],
     featured: true
   },
   {
     name: "Enterprise",
     price: "Custom",
-    description: "For larger organizations with compliance needs.",
-    perks: ["Private deployment", "SAML / SSO access", "Advanced integrations"],
+    description: "For larger organizations with security and scale requirements.",
+    perks: ["Private deployment", "Role-based security", "Advanced integrations"],
     featured: false
   }
 ];
@@ -30,7 +30,7 @@ export default function PricingPage() {
     <main className="pricing-shell">
       <section className="pricing-header">
         <span className="section-kicker">Simple pricing</span>
-        <h1>Choose the plan that fits your build stage.</h1>
+        <h1>Pick the plan that fits how your team ships.</h1>
       </section>
 
       <section className="price-grid page-pricing-grid">
@@ -61,7 +61,7 @@ export default function PricingPage() {
             <span>Built to scale</span>
           </div>
           <strong>Secure from day one.</strong>
-          <p>Role-based access, secure app infrastructure, and enterprise-safe defaults are built into the workflow.</p>
+          <p>Role-based access, secure defaults, and enterprise-grade operational patterns are already built into the system.</p>
         </div>
 
         <div className="panel-card info-card">
@@ -69,8 +69,8 @@ export default function PricingPage() {
             <CreditCard size={18} />
             <span>Stripe-ready</span>
           </div>
-          <strong>Launch subscription revenue fast.</strong>
-          <p>Collect payments, manage plans, and route customers with a clean monetization system designed for modern SaaS teams.</p>
+          <strong>Turn product momentum into revenue.</strong>
+          <p>Collect subscriptions, manage plans, and connect billing systems to a product motion designed for modern SaaS teams.</p>
         </div>
 
         <div className="panel-card info-card">
@@ -79,7 +79,7 @@ export default function PricingPage() {
             <span>Product fit</span>
           </div>
           <strong>Built around momentum.</strong>
-          <p>The pricing model is designed to support early growth, creator communities, and product-led expansion.</p>
+          <p>Pricing is designed to support early growth, launch velocity, and community-led expansion without adding friction.</p>
         </div>
       </section>
     </main>

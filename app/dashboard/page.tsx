@@ -1,37 +1,32 @@
 import Link from "next/link";
 import {
-  Activity,
-  ArrowUpRight,
   Bell,
   Bot,
-  BriefcaseBusiness,
-  CheckCircle2,
-  CircleDashed,
   Database,
   FolderKanban,
   Layers3,
-  MessageSquareText,
   Search,
   Sparkles,
-  TrendingUp
+  TrendingUp,
+  Users
 } from "lucide-react";
 
 const workspaceCards = [
   { title: "Launch pipeline", detail: "93% ready", accent: "blue" },
-  { title: "Community loop", detail: "184 new insights", accent: "green" },
-  { title: "Monetization stack", detail: "$4.2k MRR", accent: "orange" }
+  { title: "Signal tracker", detail: "184 new signals", accent: "green" },
+  { title: "Revenue loop", detail: "$4.2k MRR", accent: "orange" }
 ];
 
-const recentRuns = [
+const workflowSuggestions = [
+  "Summarize the strongest product opportunities from the community signal graph",
+  "Draft the next launch brief for the AI workflow expansion",
+  "Compare product demand by segment and identify the highest-converting messaging"
+];
+
+const recentActions = [
   { name: "Growth audit", status: "Complete", time: "2m ago" },
   { name: "Community pulse", status: "Running", time: "7m ago" },
-  { name: "Product brief", status: "Queued", time: "15m ago" }
-];
-
-const suggestions = [
-  "Create a launch brief for the next product drop",
-  "Summarize Reddit sentiment across the builder community",
-  "Identify the strongest monetization opportunities this week"
+  { name: "Launch brief", status: "Queued", time: "15m ago" }
 ];
 
 export default function DashboardPage() {
@@ -40,14 +35,14 @@ export default function DashboardPage() {
       <section className="dashboard-hero panel-card">
         <div>
           <span className="section-kicker">Workspace overview</span>
-          <h1>Build with a smarter operating layer.</h1>
+          <h1>Run product operations with real signal.</h1>
         </div>
 
         <div className="top-actions">
           <button className="ghost-btn small-btn">
             <Search size={16} /> Search
           </button>
-          <button className="ghost-btn small-btn icon-only">
+          <button className="ghost-btn small-btn icon-only" aria-label="Notifications">
             <Bell size={16} />
           </button>
         </div>
@@ -65,11 +60,11 @@ export default function DashboardPage() {
 
           <div className="prompt-box">
             <Bot size={18} />
-            <span>Design a launch plan for a new AI workspace feature targeting creators and product teams.</span>
+            <span>Design the next release plan and identify the strongest conversion opportunities across onboarding, retention, and community demand.</span>
           </div>
 
           <div className="suggestions-list">
-            {suggestions.map((item) => (
+            {workflowSuggestions.map((item) => (
               <div key={item} className="suggestion-row">
                 <Sparkles size={16} />
                 <span>{item}</span>
@@ -95,11 +90,11 @@ export default function DashboardPage() {
         <div className="panel-card">
           <div className="panel-header-row">
             <div>
-              <p className="mini-label">Workflow map</p>
-              <h3>Current build loop</h3>
+              <p className="mini-label">Execution flow</p>
+              <h3>Current operating loop</h3>
             </div>
             <Link href="/community" className="ghost-btn small-btn">
-              View network
+              View signals
             </Link>
           </div>
 
@@ -108,21 +103,21 @@ export default function DashboardPage() {
               <span className="timeline-dot green" />
               <div>
                 <strong>Research</strong>
-                <p>Audience, use cases, and demand map complete.</p>
+                <p>Customer and community demand are mapped and prioritized.</p>
               </div>
             </div>
             <div className="timeline-item">
               <span className="timeline-dot blue" />
               <div>
                 <strong>Prototype</strong>
-                <p>Messaging and onboarding flows in review.</p>
+                <p>Messaging, onboarding, and conversion flows are under review.</p>
               </div>
             </div>
             <div className="timeline-item">
               <span className="timeline-dot orange" />
               <div>
                 <strong>Ship</strong>
-                <p>Launch checklist is ready for the next release.</p>
+                <p>Launch checklist is ready for the next release window.</p>
               </div>
             </div>
           </div>
@@ -132,12 +127,12 @@ export default function DashboardPage() {
           <div className="panel-header-row">
             <div>
               <p className="mini-label">Recent actions</p>
-              <h3>AI runs</h3>
+              <h3>Workflow history</h3>
             </div>
           </div>
 
           <div className="run-list">
-            {recentRuns.map((run) => (
+            {recentActions.map((run) => (
               <div key={run.name} className="run-item">
                 <div className="run-icon">
                   <FolderKanban size={16} />
@@ -157,10 +152,10 @@ export default function DashboardPage() {
         <div className="panel-card info-card">
           <div className="info-header">
             <Layers3 size={18} />
-            <span>Product insights</span>
+            <span>Product insight</span>
           </div>
-          <strong>Creator workflows are your strongest wedge.</strong>
-          <p>Demand is rising fastest in AI-assisted product ideation and launch operations.</p>
+          <strong>Creator workflows are the strongest wedge.</strong>
+          <p>Demand is rising fastest in AI-assisted product ideation, launch sequencing, and workflow clarity.</p>
         </div>
 
         <div className="panel-card info-card">
@@ -168,8 +163,8 @@ export default function DashboardPage() {
             <TrendingUp size={18} />
             <span>Growth signal</span>
           </div>
-          <strong>Activation improving week over week.</strong>
-          <p>Retention is highest in creator teams using collaborative AI and launch tracking tools.</p>
+          <strong>Activation is climbing week over week.</strong>
+          <p>Teams using clear AI guidance and aligned product loops are seeing stronger retention and faster adoption.</p>
         </div>
 
         <div className="panel-card info-card">
@@ -177,8 +172,8 @@ export default function DashboardPage() {
             <Database size={18} />
             <span>Graph health</span>
           </div>
-          <strong>Knowledge graph remains stable.</strong>
-          <p>Issue clustering and idea classification are producing stronger decision quality.</p>
+          <strong>Signal quality is holding steady.</strong>
+          <p>Topic clustering, feedback routing, and product insight mapping continue to improve decision quality.</p>
         </div>
       </section>
     </main>
